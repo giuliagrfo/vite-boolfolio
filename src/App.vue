@@ -50,6 +50,8 @@ export default {
                         <img class="card-image" :src="getImage(project.cover_image)" alt="">
                         <div class="card-body">
                             <h4>{{ project.title }}</h4>
+                            <span><strong>Slug:</strong> {{ project.slug }}</span>
+                            <p class="py-3"><strong>Description:</strong> {{ project.description }}</p>
                         </div>
                     </div>
 
