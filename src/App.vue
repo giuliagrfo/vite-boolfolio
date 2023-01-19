@@ -18,11 +18,11 @@ export default {
             axios
                 .get(url)
                 .then(response => {
-                    console.log(response.data);
-                    this.projects = response.data;
+                    console.log(response.data.results);
+                    this.projects = response;
                 })
                 .catch(error => {
-                    console.error(error.message);
+                    console.error(error.message.data.results);
                     this.error = error.message;
                 })
         }
@@ -37,8 +37,8 @@ export default {
     <section class="vue-home">
         <div class="container">
             <h1>Projects</h1>
-            <div class="row" v-if="!loading">
-                <div class="col-3" v-for="project in projects.data">
+            <div class="row" v-if="projects">
+                <div class="col-3" v-for="project in projects.data.results">
                     <div class="card">
                         <div class="card-body">
                             <h4>{{ project.title }}</h4>
