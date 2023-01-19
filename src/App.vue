@@ -25,7 +25,14 @@ export default {
                     console.error(error.message.data.results);
                     this.error = error.message;
                 })
-        }
+        },
+        getImage(path) {
+            console.log(path);
+            if (path) {
+                return this.base_api_url + path
+            }
+            return '/img/placeholder.jpg'
+        },
     },
     mounted() {
         this.getProjects(this.base_api_url + '/api/projects');
@@ -38,8 +45,9 @@ export default {
         <div class="container">
             <h1>Projects</h1>
             <div class="row" v-if="projects">
-                <div class="col-3" v-for="project in projects.data.results">
+                <div class="col-3 gy-4" v-for="project in projects.data.results">
                     <div class="card">
+                        <img class="card-image" :src="getImage(project.cover_image)" alt="">
                         <div class="card-body">
                             <h4>{{ project.title }}</h4>
                         </div>
