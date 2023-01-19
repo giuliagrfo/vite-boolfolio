@@ -47,7 +47,7 @@ export default {
             <div class="row" v-if="projects">
                 <div class="col-3 gy-4" v-for="project in projects.data.results">
                     <div class="card border-0">
-                        <!-- <img class="card-image" :src="getImage(project.cover_image)" alt=""> -->
+                        <img class="card-image" :src="getImage(project.cover_image)" alt="">
                         <div class="card-body">
                             <h4>{{ project.title }}</h4>
                             <span><strong>Slug:</strong> {{ project.slug }}</span>
