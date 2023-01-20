@@ -18,20 +18,20 @@ export default {
             axios
                 .get(url)
                 .then(response => {
-                    console.log(response.data.results);
+                    console.log(response);
                     this.projects = response;
                 })
                 .catch(error => {
-                    console.error(error.message.data.results);
+                    console.error(error.message);
                     this.error = error.message;
                 })
         },
         getImage(path) {
             console.log(path);
             if (path) {
-                return this.base_api_url + path
+                return this.base_api_url + '/storage/' + path
             }
-            return '/img/placeholder.jpg'
+            return '/img/placeholder-1.jpg';
         },
     },
     mounted() {
