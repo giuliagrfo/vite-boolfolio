@@ -13,12 +13,12 @@ export default {
         }
     },
     mounted() {
-        const url = this.base_api_url + '/api/projects/' + this.params.slug
+        const url = this.base_api_url + '/api/projects/' + this.$route.params.slug
         console.log(url);
         axios.get(url)
             .then(response => {
                 if (response.data.success) {
-                    this.post = response.data.results
+                    this.project = response.data.results
                     this.loading = false
                 }
             })
@@ -32,16 +32,17 @@ export default {
 <template>
 
     <div class="single-project">
-        {{ $route.params.slug }}
 
         <div class="single-project" v-if="project">
-            <img class="img-fluid w-100" :src="api_base_url + '/storage/' + project.cover_image" :alt="project.title">
             <div class="container">
+                <img v-if="project.cover_image" class="img-fluid w-50" :src="base_api_url + project.cover_image"
+                    :alt="project.title">
+                <img v-else class="img-fluid w-25" src="/public/img/placeholder-1.png" alt="">
                 <h2>
                     {{ project.title }}
                 </h2>
                 <div class="content">
-                    {{ project.body }}
+                    {{ project.description }}
                 </div>
             </div>
         </div>

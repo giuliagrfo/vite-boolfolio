@@ -31,7 +31,7 @@ export default {
             if (path) {
                 return this.base_api_url + '/storage/' + path
             }
-            return '/img/placeholder-1.jpg';
+            return '/img/placeholder.jpg';
         },
     },
     mounted() {
@@ -47,11 +47,13 @@ export default {
             <div class="row" v-if="projects">
                 <div class="col-3 gy-4" v-for="project in projects.data.results">
                     <div class="card border-0">
-                        <img class="card-image" :src="getImage(project.cover_image)" alt="">
+                        <img v-if="project.cover_image" class="card-image" :src="getImage(project.cover_image)" alt="">
+                        <img v-else src="/public/img/placeholder-1.png" alt="">
                         <div class="card-body">
                             <h4>{{ project.title }}</h4>
-                            <span><strong>Slug:</strong> {{ project.slug }}</span>
                             <p class="py-3"><strong>Description:</strong> {{ project.description }}</p>
+                            <router-link :to="{ name: 'single-project', params: { slug: project.slug } }">Read
+                                More</router-link>
                         </div>
                     </div>
 
