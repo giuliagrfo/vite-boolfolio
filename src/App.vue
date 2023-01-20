@@ -1,16 +1,13 @@
 <script>
-import ProjectCard from './components/ProjectCard.vue'
-import axios from 'axios';
 export default {
     components: {
-        ProjectCard
     }
 }
 
 </script>
 
 <template>
-    <ProjectCard />
+    <router-view></router-view>
 </template>
 
 <style lang="scss">
