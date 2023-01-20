@@ -9,10 +9,7 @@ export default {
 </script>
 
 <template>
-    <div class="container">
-        <div>
-            <h1>My projects</h1>
-        </div>
+    <div class="container mt-5">
 
         <ProjectCard></ProjectCard>
 
