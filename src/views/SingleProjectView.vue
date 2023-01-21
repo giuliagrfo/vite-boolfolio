@@ -31,7 +31,7 @@ export default {
 
 <template>
 
-    <div class="single-project">
+    <div class="single-project mt-5">
 
         <div class="single-project" v-if="project">
             <div class="container">
@@ -43,6 +43,23 @@ export default {
                 </h2>
                 <div class="content">
                     {{ project.description }}
+                </div>
+                <div class="type">
+                    <strong>Type: </strong>
+                    <span v-if="project.type">
+                        {{ project.type.name }}
+                    </span>
+                    <span v-else>No type assigned</span>
+                </div>
+
+                <div class="technologies">
+                    <strong>Technologies: </strong>
+                    <template v-if="project.technologies.length > 0">
+                        <span v-for="technology in project.technologies">
+                            #{{ technology.name }}
+                        </span>
+                    </template>
+                    <template v-else>No technologies assigned</template>
                 </div>
             </div>
         </div>

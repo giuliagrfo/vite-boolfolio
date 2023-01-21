@@ -59,7 +59,9 @@ export default {
                 <img v-else src="/public/img/placeholder-1.png" alt="">
                 <div class="card-body">
                     <h4>{{ project.title }}</h4>
-                    <p class="py-3"><strong>Description:</strong>{{ trimDescription(project.description ) }}</p>
+                    <div v-if="project.description != null">
+                        <p class="py-3"><strong>Description:</strong>{{ trimDescription(project.description) }}</p>
+                    </div>
                     <div class="type">
                         <strong>Type: </strong>
                         <span v-if="project.type">
