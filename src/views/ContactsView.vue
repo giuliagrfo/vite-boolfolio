@@ -7,7 +7,7 @@ export default {
 
 <template>
     <div class="container mt-5">
-        <h1>Contacts</h1>
+        <h1 class="text-uppercase">Contacts</h1>
         <form action="">
             <div class="mb-3">
                 <label for="" class="form-label">Name</label>

@@ -70,7 +70,10 @@ export default {
                     </ul>
                 </nav>
             </div>
-
+            <div class=" text-center" v-else-if="loading">
+                <div class="spinner-border m-5" role="status"></div>
+                <h6>Loading...</h6>
+            </div>
         </div>
 
     </section>

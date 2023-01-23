@@ -7,7 +7,7 @@ export default {
 
 <template>
     <div class="container mt-5">
-        <h1>About</h1>
+        <h1 class="text-uppercase">About</h1>
         <p class="lead">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, adipisci optio, tempore maiores sit
             asperiores
