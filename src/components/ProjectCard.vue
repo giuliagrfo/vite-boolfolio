@@ -1,12 +1,12 @@
 <script>
 import axios from 'axios';
-
+import { state } from '../state.js'
 export default {
     name: 'ProjectCard',
     data() {
         return {
             projects: null,
-            base_api_url: 'http://localhost:8000',
+            state,
             loading: true
         }
 
@@ -28,7 +28,7 @@ export default {
         getImage(path) {
             console.log(path);
             if (path) {
-                return this.base_api_url + '/storage/' + path
+                return this.state.base_api_url + '/storage/' + path
             }
             return '/img/placeholder.jpg';
         },
@@ -46,7 +46,7 @@ export default {
         }
     },
     mounted() {
-        this.getProjects(this.base_api_url + '/api/projects');
+        this.getProjects(this.state.base_api_url + '/api/projects');
     }
 }
 </script>
@@ -56,7 +56,7 @@ export default {
         <div class="col-3 gy-4" v-for="project in projects.data.results">
             <div class="card border-0">
                 <img v-if="project.cover_image" class="card-image" :src="getImage(project.cover_image)" alt="">
-                <img v-else src="/public/img/placeholder-1.png" alt="">
+                <img v-else src="/img/placeholder-1.png" alt="">
                 <div class="card-body">
                     <h4>{{ project.title }}</h4>
                     <div v-if="project.description != null">
@@ -89,25 +89,25 @@ export default {
             </div>
 
 
-            // <!-- <nav class="d-flex justify-content-center pt-3" aria-label="Page navigation ">
-            //     </div>
+            <!-- <nav class="d-flex justify-content-center pt-3" aria-label="Page navigation ">
+                </div>
    
-            //     <ul class="pagination">
-            //         <li class="page-item" v-if="projects.prev_page_url" @click="prevPage(projects.prev_page_url)">
-            //             <a class="page-link" aria-label="Previous">
-            //                 <span aria-hidden="true">&laquo;</span>
-            //             </a>
-            //         </li>
-            //         <li class="page-item active" aria-current="page"><a class="page-link" href="#">{{
-            //             projects.current_page
-            //         }}</a></li>
-            //         <li class="page-item" v-if="projects.next_page_url" @click="nextPage(projects.next_page_url)">
-            //             <a class="page-link" aria-label="Next">
-            //                 <span aria-hidden="true">&raquo;</span>
-            //             </a>
-            //         </li>
-            //     </ul>
-            // </nav> -->
+                <ul class="pagination">
+                    <li class="page-item" v-if="projects.prev_page_url" @click="prevPage(projects.prev_page_url)">
+                        <a class="page-link" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">{{
+                        projects.current_page
+                    }}</a></li>
+                    <li class="page-item" v-if="projects.next_page_url" @click="nextPage(projects.next_page_url)">
+                        <a class="page-link" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav> -->
         </div>
     </div>
 
