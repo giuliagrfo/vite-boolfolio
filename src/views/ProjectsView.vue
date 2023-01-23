@@ -1,9 +1,9 @@
 <script>
-import ProjectCard from '../components/ProjectCard.vue'
+import ProjectList from '../components/ProjectList.vue'
 export default {
     name: 'ProjectsView',
     components: {
-        ProjectCard
+        ProjectList
     }
 }  
 </script>
@@ -11,7 +11,7 @@ export default {
 <template>
     <div class="container mt-5">
 
-        <ProjectCard></ProjectCard>
+        <ProjectList></ProjectList>
 
     </div>
 </template>
