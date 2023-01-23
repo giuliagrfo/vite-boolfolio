@@ -58,9 +58,9 @@ export default {
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
-                        <li class="page-item active" aria-current="page"><a class="page-link" href="#">{{
-                            projects.data.results.current_page
-                        }}</a></li>
+                        <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="#">{{ projects.data.results.current_page }}</a>
+                        </li>
                         <li class="page-item" v-if="projects.data.results.next_page_url"
                             @click="nextPage(projects.data.results.next_page_url)">
                             <a class="page-link" aria-label="Next">
