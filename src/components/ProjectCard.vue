@@ -33,7 +33,7 @@ export default {
 <template>
     <div class="col-3 gy-4">
         <div class="card border-0">
-            <img v-if="project.cover_image" class="card-image" :src="getImage(project.cover_image)" alt="">
+            <img v-if="project.cover_image" :src="getImage(project.cover_image)" alt="">
             <img v-else src="/img/placeholder-1.png" alt="">
             <div class="card-body">
                 <h4>{{ project.title }}</h4>

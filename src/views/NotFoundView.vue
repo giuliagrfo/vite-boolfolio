@@ -19,6 +19,6 @@ export default {
 @use '../styles/general.scss';
 
 .container-fluid {
-    background-color: black;
+    background-color: rgba(43, 50, 61, 255);
 }
 </style>
