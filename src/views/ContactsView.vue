@@ -21,12 +21,16 @@ export default {
             console.log('email', this.email);
             console.log('message', this.message);
 
+            this.loading = true;
+
+            this.errors = {};
+
             const data = {
                 name: this.name,
                 email: this.email,
-                messsage: this.message
+                message: this.message
             }
-            axios.post(this.state.base_api_url + '/api/contacts')
+            axios.post(`${this.state.base_api_url}/api/contacts`, data)
                 .then((response) => {
                     this.success = response.data.success;
 
@@ -37,8 +41,9 @@ export default {
                         this.email = '';
                         this.message = '';
                     } else {
-                        this.errors = response.data.error;
+                        this.errors = response.data.errors;
                     }
+
                     this.loading = false
                 });
 
@@ -60,7 +65,7 @@ export default {
                 <label for="name" class="form-label">Name</label>
                 <input type="text" name="name" id="name" v-model="name" class="form-control" placeholder="name"
                     aria-describedby="fullNameHelper">
-                <p v-for="(error, index) in errors.name" class="alert alert-danger mt-2">
+                <p v-for="(error) in errors.name" class="alert alert-danger mt-2">
                     {{ error }}
                 </p>
                 <small id="fullNameHelper" class="text-muted">Add your name</small>
@@ -75,7 +80,7 @@ export default {
                 <label for="email" class="form-label">Email</label>
                 <input type="email" name="email" id="email" v-model="email" class="form-control"
                     placeholder="name@example.com" aria-describedby="emailHelper">
-                <p v-for="(error, index) in errors.email" class="alert alert-danger mt-2">
+                <p v-for="(error) in errors.email" class="alert alert-danger mt-2">
                     {{ error }}
                 </p>
                 <small id="emailHelper" class="text-muted">Add your email address</small>
@@ -84,14 +89,14 @@ export default {
             <div class="mb-3">
                 <label for="message" class="form-label">Message</label>
                 <textarea class="form-control" name="message" id="message" v-model="message" rows="5"></textarea>
-                <p v-for="(error, index) in errors.message" class="alert alert-danger mt-2">
+                <p v-for="(error) in errors.message" class="alert alert-danger mt-2">
                     {{ error }}
                 </p>
             </div>
 
-            <button type="submit" class="btn btn-primary" :disabled="loading">{{
-                loading? 'Sending..': 'Contact Me'
-            }}</button>
+            <button type="submit" class="btn btn-primary" :disabled="loading">
+                {{ loading? 'Sending..': 'Contact Me' }}
+            </button>
         </form>
     </div>
 
