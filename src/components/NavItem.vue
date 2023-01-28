@@ -5,31 +5,27 @@ export default {
 </script>
 
 <template>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
         <div class="container">
-            <a class="navbar-brand text-uppercase logo" href="/" style="width: 50px; height: 50px;">
-                <svg style="width: 100px; height: 70px">
+            <a class="navbar-brand text-uppercase logo " href="/" style="width: 50px; height: 50px;">
+                <svg style="width: 80px; height: 70px" class="mb-1">
 
-                    <g data-v-2cb57da0="" fill="grey" class="iconbordersvg">
+                    <g fill="lightgrey" class="iconbordersvg">
                         <g>
-                            <polyline stroke="grey" stroke-width="2" fill-opacity="0"
+                            <polyline stroke="lightgrey" stroke-width="1" fill-opacity="0"
                                 points="32.82866668701172,63.33551025390625 0,63.33551025390625 0,17.615869998931885 19.32866668701172,17.615869998931885">
                             </polyline>
-                            <polyline stroke="grey" stroke-width="2" fill-opacity="0"
+                            <polyline stroke="lightgrey" stroke-width="1" fill-opacity="0"
                                 points="32.82866668701172,63.33551025390625 65.65733337402344,63.33551025390625 65.65733337402344,17.615869998931885 46.32866668701172,17.615869998931885">
                             </polyline>
                         </g>
                         <g>
-                            <g>
-                                <rect data-gra="graph-name-bg" stroke-width="2" class="i-icon-bg" x="0" y="0"
-                                    width="65.65732955932617" height="73.33551406860352" fill-opacity="0"></rect>
-                            </g>
                             <g transform="translate(10,10)">
                                 <g transform="translate(0.0000095367431640625,0)">
-                                    <rect fill="grey" width="9.328664779663086" height="1" fill-opacity="0" x="0"
+                                    <rect fill="lightgrey" width="9.328664779663086" height="1" fill-opacity="0" x="0"
                                         y="7.115869998931885"></rect>
                                     <g class="iconsvg-imagesvg" transform="translate(12.328664779663086,0)">
-                                        <g><svg filter="grey" x="0" y="0" width="20.999999999999993"
+                                        <g><svg filter="lightgrey" x="0" y="0" width="20.999999999999993"
                                                 height="15.231740044969893" filtersec="colorsf8979981570"
                                                 class="image-svg-svg primary" style="overflow: visible;"><svg
                                                     xmlns="http://www.w3.org/2000/svg"
@@ -72,11 +68,11 @@ export default {
                                             </defs>
                                         </g>
                                     </g>
-                                    <rect fill="grey" width="9.328664779663086" height="1" fill-opacity="0"
+                                    <rect fill="lightgrey" width="9.328664779663086" height="1" fill-opacity="0"
                                         x="36.32864570617676" y="7.115869998931885"></rect>
                                 </g>
                                 <g transform="translate(0,18.23173999786377)">
-                                    <g data-gra="path-name" fill-rule="" stroke="grey" class="tp-name"
+                                    <g data-gra="path-name" fill-rule="" stroke="lightgrey" class="tp-name"
                                         transform="translate(0,0)">
                                         <g transform="scale(0.42000000000000004)">
                                             <g>
@@ -88,8 +84,6 @@ export default {
                                             </g>
                                         </g>
                                     </g>
-                                    <rect fill="grey" width="45.65732955932617" height="1" x="0" y="34.10377311706543">
-                                    </rect>
                                 </g>
                             </g>
                         </g>
@@ -101,6 +95,7 @@ export default {
                     </mask>
                     <defs v-gra="od"></defs>
                 </svg>
+
             </a>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
                 aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">

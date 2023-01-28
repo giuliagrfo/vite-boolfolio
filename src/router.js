@@ -6,6 +6,7 @@ import ContactsView from './views/ContactsView.vue'
 import SingleProjectView from './views/SingleProjectView.vue'
 import NotFoundView from './views/NotFoundView.vue'
 
+
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -39,6 +40,7 @@ const router = createRouter({
             name: 'not-found',
             component: NotFoundView
         }
+
     ]
 })
 
