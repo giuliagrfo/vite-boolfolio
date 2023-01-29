@@ -135,6 +135,6 @@ export default {
     position: fixed;
     background: white;
     margin: -3rem;
-
+    z-index: 1;
 }
 </style>

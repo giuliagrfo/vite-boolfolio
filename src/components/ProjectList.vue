@@ -86,5 +86,6 @@ export default {
 <style lang="scss" scoped>
 #projects {
     padding-top: 5rem;
+
 }
 </style>
