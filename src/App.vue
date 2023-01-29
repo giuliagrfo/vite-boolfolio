@@ -1,15 +1,11 @@
 <script>
-import NavItem from './components/NavItem.vue'
 export default {
-    components: {
-        NavItem
-    }
+    name: 'App'
 }
 
 </script>
 
 <template>
-    <NavItem />
     <router-view></router-view>
 </template>
 

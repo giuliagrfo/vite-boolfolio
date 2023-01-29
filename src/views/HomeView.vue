@@ -47,7 +47,7 @@ export default {
 @import url(https://use.fontawesome.com/releases/v5.0.6/css/all.css);
 
 .home {
-    height: calc(100vh - 74px);
+    height: calc(100vh);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.984), rgba(0, 0, 0, 0.677)), url('img/code.gif');
     background-color: rgba(10, 24, 23, 255);
     background-position: center;

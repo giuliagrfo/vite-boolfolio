@@ -1,12 +1,17 @@
 <script>
+import NavItem from '../components/NavItem.vue';
 
 export default {
-    name: 'AboutView'
+    name: 'AboutView',
+    components: {
+        NavItem
+    }
 }  
 </script>
 
 <template>
-    <section id="about">
+    <NavItem></NavItem>
+    <section id="about" class="">
         <div id="banner">
             <h2 class="sign p-5">GG</h2>
             <div class="name text-center">
@@ -109,7 +114,7 @@ export default {
 
 <style lang="scss" scoped>
 #about {
-    margin: 3rem;
+    margin: 3rem 4rem;
     margin-bottom: 0;
 }
 
@@ -208,15 +213,11 @@ h1 {
         font-size: 20px;
         font-weight: 900;
         color: rgba(111, 119, 244, 255);
-
-
     }
 
     .languages p {
         text-align: left;
-
     }
-
 
 }
 

@@ -2,10 +2,9 @@
 import ProjectCard from './ProjectCard.vue';
 import { state } from '../state.js';
 import axios from 'axios';
-
 export default {
     components: {
-        ProjectCard
+        ProjectCard,
     },
     data() {
         return {
@@ -45,35 +44,38 @@ export default {
 </script>
 
 <template>
-    <section class="vue-home">
-        <div class="container">
-            <h1 class="text-uppercase">Projects</h1>
-            <div class="row" v-if="!loading">
-                <ProjectCard :project="project" v-for="project in projects.data.results.data" />
-                <nav class="d-flex justify-content-center pt-3" aria-label="Page navigation ">
-                    <ul class="pagination">
-                        <li class="page-item" v-if="projects.data.results.prev_page_url"
-                            @click="prevPage(projects.data.results.prev_page_url)">
-                            <a class="page-link" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item active" aria-current="page">
-                            <a class="page-link" href="#">{{ projects.data.results.current_page }}</a>
-                        </li>
-                        <li class="page-item" v-if="projects.data.results.next_page_url"
-                            @click="nextPage(projects.data.results.next_page_url)">
-                            <a class="page-link" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+    <section id="projects" class=" m-5">
+        <div class="container d-flex m-5">
+            <div class="title">
+                <h1 class="text-uppercase">Projects.</h1>
             </div>
-            <div class=" text-center" v-else-if="loading">
-                <div class="spinner-border m-5" role="status"></div>
-                <h6>Loading...</h6>
-            </div>
+
+        </div>
+        <div class="row" v-if="!loading">
+            <ProjectCard :project="project" v-for="project in projects.data.results.data" />
+            <nav class="d-flex justify-content-center pt-3" aria-label="Page navigation ">
+                <ul class="pagination">
+                    <li class="page-item" v-if="projects.data.results.prev_page_url"
+                        @click="prevPage(projects.data.results.prev_page_url)">
+                        <a class="page-link" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">{{ projects.data.results.current_page }}</a>
+                    </li>
+                    <li class="page-item" v-if="projects.data.results.next_page_url"
+                        @click="nextPage(projects.data.results.next_page_url)">
+                        <a class="page-link" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class=" text-center" v-else-if="loading">
+            <div class="spinner-border m-5" role="status"></div>
+            <h6>Loading...</h6>
         </div>
 
     </section>
@@ -82,5 +84,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
+#projects {
+    padding-top: 5rem;
+}
 </style>

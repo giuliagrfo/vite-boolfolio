@@ -1,19 +1,19 @@
 <script>
 import ProjectList from '../components/ProjectList.vue'
+import NavItem from '../components/NavItem.vue';
 export default {
     name: 'ProjectsView',
     components: {
-        ProjectList
+        ProjectList,
+        NavItem
     }
 }  
 </script>
 
 <template>
-    <div class="container mt-5">
+    <NavItem></NavItem>
+    <ProjectList></ProjectList>
 
-        <ProjectList></ProjectList>
-
-    </div>
 </template>
 
 <style lang="scss" scoped>

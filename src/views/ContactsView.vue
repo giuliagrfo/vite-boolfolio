@@ -1,9 +1,13 @@
 <script>
 import axios from 'axios';
+import NavItem from '../components/NavItem.vue';
 import { state } from '../state.js';
 
 export default {
     name: 'ContactsView',
+    components: {
+        NavItem
+    },
     data() {
         return {
             state,
@@ -53,7 +57,8 @@ export default {
 </script>
 
 <template>
-    <div class="container mt-5">
+    <NavItem></NavItem>
+    <div class="container mt-5 pt-5">
         <h1 class="text-uppercase">Contacts</h1>
 
         <div v-if="success" class="alert alert-success" role="alert">
