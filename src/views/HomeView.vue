@@ -56,7 +56,7 @@ export default {
     .enter_button {
         position: absolute;
         left: 50%;
-        top: 60%;
+        top: 55%;
 
         img {
             width: 50px;
