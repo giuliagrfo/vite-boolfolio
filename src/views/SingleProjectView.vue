@@ -12,6 +12,15 @@ export default {
             loading: true
 
         }
+    }, methods: {
+
+        getImage(path) {
+            console.log(path);
+            if (path) {
+                return this.state.base_api_url + '/storage/' + path
+            }
+            return '/img/placeholder-1.jpg';
+        }
     },
     mounted() {
         const url = this.state.base_api_url + '/api/projects/' + this.$route.params.slug
@@ -32,39 +41,36 @@ export default {
 
 <template>
 
-    <div class="single-project mt-5">
+    <div class="single-project mt-5" v-if="project">
+        <div class="container">
+            <img class="w-50" v-if="project.cover_image" :src="getImage(project.cover_image)" alt="">
+            <img class="w-50" v-else src="/img/placeholder-1.png" alt="">
+            <h2>
+                {{ project.title }}
+            </h2>
+            <div class="content">
+                {{ project.description }}
+            </div>
+            <div class="type">
+                <strong>Type: </strong>
+                <span v-if="project.type">
+                    {{ project.type.name }}
+                </span>
+                <span v-else>No type assigned</span>
+            </div>
 
-        <div class="single-project" v-if="project">
-            <div class="container">
-                <img v-if="project.cover_image" class="img-fluid w-50" :src="base_api_url + project.cover_image"
-                    :alt="project.title">
-                <img v-else class="img-fluid w-25" src="/img/placeholder-1.png" alt="">
-                <h2>
-                    {{ project.title }}
-                </h2>
-                <div class="content">
-                    {{ project.description }}
-                </div>
-                <div class="type">
-                    <strong>Type: </strong>
-                    <span v-if="project.type">
-                        {{ project.type.name }}
+            <div class="technologies">
+                <strong>Technologies: </strong>
+                <template v-if="project.technologies.length > 0">
+                    <span v-for="technology in project.technologies">
+                        #{{ technology.name }}
                     </span>
-                    <span v-else>No type assigned</span>
-                </div>
-
-                <div class="technologies">
-                    <strong>Technologies: </strong>
-                    <template v-if="project.technologies.length > 0">
-                        <span v-for="technology in project.technologies">
-                            #{{ technology.name }}
-                        </span>
-                    </template>
-                    <template v-else>No technologies assigned</template>
-                </div>
+                </template>
+                <template v-else>No technologies assigned</template>
             </div>
         </div>
     </div>
+
 </template>
 
 
