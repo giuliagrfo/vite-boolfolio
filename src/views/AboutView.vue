@@ -35,15 +35,12 @@ export default {
                     </div>
                     <div class="box css">
                         <img src="img/css.svg" alt="">
-
                     </div>
                     <div class="box js">
                         <img src="img/js.svg" alt="">
-
                     </div>
                     <div class="box php">
                         <img src="img/php.svg" alt="">
-
                     </div>
                 </div>
                 <div class="col-8 right text-center">

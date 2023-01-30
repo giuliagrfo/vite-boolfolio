@@ -81,6 +81,8 @@ export default {
         max-width: 100%;
         width: 800px;
         height: 300px;
+        object-fit: cover;
+        object-position: top;
     }
 
     .card-body {
