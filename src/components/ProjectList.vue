@@ -51,7 +51,7 @@ export default {
             </div>
 
         </div>
-        <div class="row" v-if="!loading">
+        <div class="row g-3" v-if="!loading">
             <ProjectCard :project="project" v-for="project in projects.data.results.data" />
             <nav class="d-flex justify-content-center pt-3" aria-label="Page navigation ">
                 <ul class="pagination">
@@ -79,13 +79,10 @@ export default {
         </div>
 
     </section>
-
-
 </template>
 
 <style lang="scss" scoped>
 #projects {
     padding-top: 5rem;
-
 }
 </style>

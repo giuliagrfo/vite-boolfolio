@@ -7,18 +7,31 @@ export default {
 <template>
     <div class="home_page">
         <div class="home">
-            <div class="enter_button d-flex flex-column">
-                <a href="#menu"><img src="/img/enter.png" alt=""></a>
-                <span class="text-center">enter</span>
+            <div class="black text-white d-flex align-items-end justify-content-center flex-column">
+                <h1>He</h1>
+                <h1>llo</h1>
             </div>
-
+            <div class="white">
+                <h3>I'm Giulia Grifo,</h3>
+                <h3>a Web Developer</h3>
+                <button class="cta">
+                    <span class="hover-underline-animation"><a href="#menu">Click to enter</a> </span>
+                    <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg"
+                        id="arrow-horizontal">
+                        <path transform="translate(30)"
+                            d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10"
+                            id="Path_10">
+                        </path>
+                    </svg>
+                </button>
+            </div>
         </div>
-        <div class="container d-flex flex-column justify-content-center" id="menu">
+        <div id="menu" class="container d-flex flex-column justify-content-center">
             <div class="pages d-flex justify-content-center align-items-center">
                 <ul class="list-unstyled text-center">
-                    <li><a class="link about" href="/about">About Me</a></li>
-                    <li><a class="link projects" href="/projects">Projects</a></li>
-                    <li><a class="link contacts" href="/contacts">Contacts</a></li>
+                    <li><a class="link about" href="/about">About</a></li>
+                    <li><a class="link projects" href="/projects">Progetti</a></li>
+                    <li><a class="link contacts" href="/contacts">Contatti</a></li>
                     <li><a class="link git" href="https://github.com/giuliagrfo">GitHub</a></li>
                 </ul>
             </div>
@@ -39,8 +52,6 @@ export default {
             </ul>
         </div>
     </div>
-
-
 </template>
 
 <style lang="scss" scoped>
@@ -48,22 +59,28 @@ export default {
 
 .home {
     height: calc(100vh);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.984), rgba(0, 0, 0, 0.677)), url('img/code.gif');
-    background-color: rgba(10, 24, 23, 255);
-    background-position: center;
-    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
 
-    .enter_button {
-        position: absolute;
-        left: 50%;
-        top: 55%;
 
-        img {
-            width: 50px;
+    .black {
+        background-color: black;
+        width: 40%;
+        height: 80%;
+        margin-left: 4rem;
+
+        h1 {
+            font-size: 200px;
+            margin-right: 1rem;
         }
+    }
 
-        span {
-            color: rgba(245, 1, 87, 255);
+    .white {
+        margin-left: 2rem;
+
+        h3 {
+            font-size: 80px;
+            color: rgba(255, 117, 98, 255);
         }
     }
 }

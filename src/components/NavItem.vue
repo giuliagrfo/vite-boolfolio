@@ -29,8 +29,7 @@ export default {
                                                 height="15.231740044969893" filtersec="colorsf8979981570"
                                                 class="image-svg-svg primary" style="overflow: visible;"><svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px"
-                                                    y="0px"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
                                                     viewBox="0.5 6.937353610992432 47.099998474121094 34.16264343261719"
                                                     enable-background="new 0 0 48 48" xml:space="preserve">
                                                     <g>
@@ -121,7 +120,6 @@ export default {
             </div>
         </div>
     </nav>
-
 </template>
 
 <style lang="scss" scoped>
@@ -133,8 +131,8 @@ export default {
     font-family: 'Montserrat', sans-serif;
     width: 100%;
     position: fixed;
+    top: 0;
     background: white;
-    margin: -3rem;
     z-index: 1;
 }
 </style>

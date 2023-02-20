@@ -13,14 +13,12 @@ export default {
     <NavItem></NavItem>
     <section id="about" class="">
         <div id="banner">
-            <h2 class="sign p-5">GG</h2>
             <div class="name text-center">
                 <h2>I'm Giulia Grifo</h2>
             </div>
             <div class="title text-center">
                 <h1>About Me</h1>
             </div>
-
             <div class="scroll d-flex justify-content-end align-items-end">
                 <a href="#skills"><img src="/img/scroll-down.gif" alt=""></a>
 
@@ -44,55 +42,31 @@ export default {
                     </div>
                 </div>
                 <div class="col-8 right text-center">
-                    <div class="description">
-                        <h4>Knowledge Is Everything</h4>
+                    <div class="description d-flex flex-column align-items-center justify-content-center">
                         <h1>My Skills</h1>
-                        <p class="lead">
-                            Sono un'appassionata di tecnologia e coding.
-                            Dopo un periodo trascorso nella ristorazione, finalmente ho avuto l'opportunità di
-                            mettermi
-                            in gioco, iniziando a programmare non solo applicazioni, ma anche il mio futuro.
 
-                        </p>
                         <p class="mt-5">
-                            Ho frequentato il corso intensivo di 6 mesi proposto da Boolean per diventare Web
+                            Ho frequentato il corso intensivo di 6 mesi proposto da Boolean Careers per diventare Web
                             Developer
                             e grazie a questa formazione ho acquisito competenze in linguaggi di programmazione
-                            Front-end e Back-end come:
+                            Front-end e Back-end, utilizzati per la realizzazione di vari progetti che potete trovare
+                            <button class="cta">
+                                <span class="hover-underline-animation"><a href="/projects">qui</a> </span>
+                                <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg"
+                                    id="arrow-horizontal">
+                                    <path transform="translate(30)"
+                                        d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                                        data-name="Path 10" id="Path_10">
+                                    </path>
+                                </svg>
+                            </button>
                         </p>
-                        <div class="row languages">
-                            <div class="col">
-                                <h6 class="text-uppercase">Html</h6>
-                                <p>Linguaggio di Markup</p>
-                                <p class="mt-3">Impaginazione e formattazione di pagine Web</p>
-                            </div>
-                            <div class="col">
-                                <h6 class="text-uppercase">Css</h6>
-                                <p>Cascading Style Sheets</p>
-                                <p class="mt-3">Gestione del design delle pagine Web in combinazione con HTML</p>
-                            </div>
-                            <div class="col">
-                                <h6 class="text-uppercase">Javascript</h6>
-                                <p>
-                                    Linguaggio di programmazione per realizzare pagine Web interattive,
-                                    con relativa conoscenza del suo framework Vue.js
-                                </p>
-                            </div>
-                            <div class="col">
-                                <h6 class="text-uppercase">PHP</h6>
-                                <p>
-                                    Linguaggio di scripting (server side) per la gestione dei dati, con utilizzo del
-                                    suo
-                                    framework LARAVEL
-                                </p>
 
-                            </div>
-                        </div>
                     </div>
 
                 </div>
             </div>
-            <div id="logo" class="d-flex flex-row justify-content-evenly align-items-center">
+            <div id="logo" class="d-flex flex-row justify-content-between align-items-center">
                 <img src="/img/laravel.svg" alt="">
                 <img src="/img/bootstrap.png" alt="">
                 <img src="/img/figma.png" alt="">
@@ -105,13 +79,11 @@ export default {
 
 
     </section>
-
-
 </template>
 
 <style lang="scss" scoped>
 #about {
-    margin: 3rem 4rem;
+    margin: 8rem 4rem;
     margin-bottom: 0;
 }
 
@@ -125,9 +97,12 @@ h1 {
 #banner {
     background-color: rgba(111, 119, 244, 255);
     padding-bottom: 4rem;
-    height: 100vh;
+    height: calc(100vh - 190px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
 
-    .sign,
     .title h1 {
         font-family: 'Montserrat', sans-serif;
         font-weight: 900;
@@ -144,8 +119,8 @@ h1 {
     }
 
     .scroll {
-        position: relative;
-        top: 130px;
+        position: absolute;
+        top: 80%;
         right: 70px;
 
         img {
@@ -155,10 +130,14 @@ h1 {
     }
 }
 
+// .bio {
+//     background-color: ;
+// }
+
 // SKILLS
-#skills {
-    height: 100vh;
-    padding-top: 4rem;
+#skills,
+#bio {
+    padding-top: 6rem;
 }
 
 .left {
@@ -170,7 +149,22 @@ h1 {
 }
 
 .right {
-    height: fit-content;
+    max-height: 100%;
+
+    .description {
+        height: 100%;
+
+        .col h6 {
+            font-size: 20px;
+            font-weight: 900;
+            color: rgba(111, 119, 244, 255);
+        }
+
+        .languages p {
+            text-align: left;
+        }
+
+    }
 }
 
 .box {
@@ -202,21 +196,7 @@ h1 {
     background-color: rgba(177, 149, 222, 255);
 }
 
-.description {
-    margin: 3.3rem 10rem;
-    margin-bottom: 0;
 
-    .col h6 {
-        font-size: 20px;
-        font-weight: 900;
-        color: rgba(111, 119, 244, 255);
-    }
-
-    .languages p {
-        text-align: left;
-    }
-
-}
 
 #logo {
     padding: 3rem 0;

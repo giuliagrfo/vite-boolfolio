@@ -59,56 +59,22 @@ export default {
 <template>
     <NavItem></NavItem>
     <div class="container mt-5 pt-5">
-        <h1 class="text-uppercase">Contact Me</h1>
+        <h1 class="text-uppercase">Contattami</h1>
 
         <div v-if="success" class="alert alert-success" role="alert">
             Messaggio inviato con successo!
         </div>
-
-        <!-- <form @submit.prevent="sendForm()">
-            <div class="mb-3">
-                <label for="name" class="form-label">Full Name</label>
-                <input type="text" name="name" id="name" v-model="name" class="form-control" placeholder="full name"
-                    aria-describedby="fullNameHelper">
-                <p v-for="(error) in errors.name" class="alert alert-danger mt-2">
-                    {{ error }}
-                </p>
-                <small id="fullNameHelper" class="text-muted">Add your full name</small>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" id="email" v-model="email" class="form-control"
-                    placeholder="name@example.com" aria-describedby="emailHelper">
-                <p v-for="(error) in errors.email" class="alert alert-danger mt-2">
-                    {{ error }}
-                </p>
-                <small id="emailHelper" class="text-muted">Add your email address</small>
-            </div>
-
-            <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" name="message" id="message" v-model="message" rows="5"
-                    placeholder="type here..."></textarea>
-                <p v-for="(error) in errors.message" class="alert alert-danger mt-2">
-                    {{ error }}
-                </p>
-            </div>
-
-            <button type="submit" class="btn btn-primary" :disabled="loading">
-                {{ loading? 'Sending..': 'Contact Me' }}
-            </button>
-        </form> -->
         <div class="login-box">
             <form @submit.prevent="sendForm()">
                 <div class="user-box">
                     <input required="name" name="name" type="text" v-model="name">
-                    <label>Full Name</label>
+                    <label>Nome</label>
                     <p v-for="(error) in errors.name" class="alert alert-danger mt-2">
                         {{ error }}
                     </p>
                 </div>
                 <div class="user-box">
-                    <input required="" name="email" type="email">
+                    <input required="" name="email" type="email" v-model="email">
                     <label>Email</label>
                     <p v-for="(error) in errors.email" class="alert alert-danger mt-2">
                         {{ error }}
@@ -116,7 +82,7 @@ export default {
                 </div>
                 <div class="user-box">
                     <textarea name="message" id="message" v-model="message" cols="30" rows="10"
-                        placeholder="Message"></textarea>
+                        placeholder="Messaggio"></textarea>
                     <p v-for="(error) in errors.message" class="alert alert-danger mt-2">
                         {{ error }}
                     </p>
@@ -126,25 +92,20 @@ export default {
                     <span></span>
                     <span></span>
                     <span></span>
-                    {{ loading? 'Sending..': 'Contact Me' }}
+                    {{ loading ? 'Sending..' : 'Invia' }}
                 </button>
             </form>
 
         </div>
     </div>
-
 </template>
 
 <style lang="scss" scoped>
 .login-box {
-    position: absolute;
-    top: 60%;
-    left: 40%;
     width: 900px;
-    height: 600px;
+    height: fit-content;
     padding: 40px;
     margin: 20px auto;
-    transform: translate(-50%, -55%);
     background: rgba(0, 0, 0, .9);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
