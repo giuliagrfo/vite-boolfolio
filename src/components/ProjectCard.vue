@@ -25,7 +25,8 @@ export default {
                 return text.slice(0, 100) + '...'
             }
             return text
-        }
+        },
+
     }
 }
 </script>
@@ -77,7 +78,7 @@ export default {
 
         &:hover .card-body {
             display: block;
-            background-color: rgba(255, 117, 98, 255);
+            background-color: rgb(0 0 0 / 88%);
             cursor: pointer;
         }
 
@@ -95,13 +96,14 @@ export default {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             font-size: 40px;
+            color: white;
         }
 
         .link {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             font-size: 20px;
-            color: grey;
+            color: rgba(255, 117, 98, 255);
         }
     }
 }

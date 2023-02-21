@@ -13,16 +13,25 @@ export default {
     <NavItem></NavItem>
     <section id="about" class="">
         <div id="banner">
-            <div class="name text-center">
-                <h2>I'm Giulia Grifo</h2>
-            </div>
             <div class="title text-center">
                 <h1>About Me</h1>
             </div>
-            <div class="scroll d-flex justify-content-end align-items-end">
-                <a href="#skills"><img src="/img/scroll-down.gif" alt=""></a>
-
+            <div class="name text-center">
+                <p>
+                    Sono un'appassionata di tecnologia e coding. <br>
+                    Con l'accademia di Boolean ho avuto l'opportunità di mettermi in gioco,
+                    iniziando a programmare non solo applicazioni, ma anche il mio futuro.
+                </p>
             </div>
+            <a href="#skills">
+                <div class="scrolldown">
+                    <div class="chevrons">
+                        <div class="chevrondown"></div>
+                        <div class="chevrondown"></div>
+                    </div>
+                </div>
+            </a>
+
         </div>
 
         <div id="skills">
@@ -90,12 +99,11 @@ export default {
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    font-size: 80px;
+    font-size: 100px;
 }
 
 
 #banner {
-    background-color: rgba(111, 119, 244, 255);
     padding-bottom: 4rem;
     height: calc(100vh - 190px);
     display: flex;
@@ -106,26 +114,117 @@ h1 {
     .title h1 {
         font-family: 'Montserrat', sans-serif;
         font-weight: 900;
+        color: rgba(255, 117, 98, 255);
     }
 
-    .title h1 {
-        color: white;
+    .name {
+        display: flex;
+        justify-content: center;
     }
 
-    .name h2 {
-        font-family: 'Playfair Display', serif;
-        font-weight: 800;
-        margin-top: 8rem;
+    .name p {
+        margin-top: 3rem;
+        color: black;
+        width: 50%;
+        text-align: center;
     }
 
-    .scroll {
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .scrolldown {
+        --color: black;
+        --sizeX: 30px;
+        --sizeY: 50px;
+        width: var(--sizeX);
+        height: var(--sizeY);
+        border: 1px solid;
+        border-radius: 50px;
+        box-sizing: border-box;
+        margin-bottom: 16px;
+        cursor: pointer;
         position: absolute;
         top: 80%;
-        right: 70px;
+        right: 50%;
+    }
 
-        img {
-            width: 60px;
-            filter: invert(1);
+    .scrolldown::before {
+        content: "";
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        width: 6px;
+        height: 6px;
+        margin-left: -3px;
+        background-color: var(--color);
+        border-radius: 100%;
+        animation: scrolldown-anim 2s infinite;
+        box-sizing: border-box;
+        box-shadow: 0px -5px 3px 1px #2a547066;
+    }
+
+    @keyframes scrolldown-anim {
+        0% {
+            opacity: 0;
+            height: 6px;
+        }
+
+        40% {
+            opacity: 1;
+            height: 10px;
+        }
+
+        80% {
+            transform: translate(0, 20px);
+            height: 10px;
+            opacity: 0;
+        }
+
+        100% {
+            height: 3px;
+            opacity: 0;
+        }
+    }
+
+    .chevrons {
+        padding: 6px 0 0 0;
+        margin-left: -3px;
+        margin-top: 48px;
+        width: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .chevrondown {
+        margin-top: -6px;
+        position: relative;
+        left: 8%;
+        border: solid var(--color);
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        transform: rotate(45deg);
+    }
+
+    .chevrondown:nth-child(odd) {
+        animation: pulse54012 500ms ease infinite alternate;
+    }
+
+    .chevrondown:nth-child(even) {
+        animation: pulse54012 500ms ease infinite alternate 250ms;
+    }
+
+    @keyframes pulse54012 {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 0.5;
         }
     }
 }
@@ -153,6 +252,11 @@ h1 {
 
     .description {
         height: 100%;
+
+        p {
+            text-align: justify;
+            padding: 0 4rem;
+        }
 
         .col h6 {
             font-size: 20px;

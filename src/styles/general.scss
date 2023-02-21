@@ -5,7 +5,17 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
+    overflow: overlay;
 
+    &::-webkit-scrollbar {
+        background: transparent;
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255, 117, 98, 255);
+        border-radius: 20px;
+    }
 
     h1 {
         font-family: 'Montserrat', sans-serif;

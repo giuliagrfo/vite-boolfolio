@@ -57,27 +57,28 @@ export default {
                         <img class="img-fluid" v-else src="/img/placeholder-1.png" alt="">
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-4 d-flex justify-content-center flex-column">
                     <div class="content">
-                        {{ project.description }}
+                        <h2>{{ project.description }}</h2>
                     </div>
-                    <div class="type">
-                        <strong>Type: </strong>
-                        <span v-if="project.type">
-                            {{ project.type.name }}
-                        </span>
-                        <span v-else>No type assigned</span>
-                    </div>
+                    <!--<div class="type">
+                                                                                            <strong>Tipologia: </strong>
+                                                                                            <span v-if="project.type">
+                                                                                                {{ project.type.name }}
+                                                                                            </span>
+                                                                                            <span v-else>No type assigned</span>
+                                                                                        </div>
 
-                    <div class="technologies">
-                        <strong>Technologies: </strong>
-                        <template v-if="project.technologies.length > 0">
-                            <span v-for="technology in project.technologies">
-                                #{{ technology.name }}
-                            </span>
-                        </template>
-                        <template v-else>No technologies assigned</template>
-                    </div>
+                                                                                        <div class="technologies">
+                                                                                            <strong>Tecnologie: </strong>
+                                                                                            <template v-if="project.technologies.length > 0">
+                                                                                                <span v-for="technology in project.technologies">
+                                                                                                    #{{ technology.name }}
+                                                                                                </span>
+                                                                                            </template>
+                                                                                            <template v-else>No technologies assigned</template>
+                                                                                        </div> -->
+
                 </div>
             </div>
 
@@ -91,10 +92,32 @@ export default {
 <style lang="scss" scoped>
 .single-project {
     margin-top: 6rem;
+    padding-bottom: 4rem;
+
+    .row {
+        padding: 4rem 0;
+    }
 
     .project_image {
         height: 500px;
-        overflow-y: scroll;
+        overflow-y: auto;
+        overflow: overlay;
+
+        &::-webkit-scrollbar {
+            background: transparent;
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba(255, 117, 98, 255);
+            border-radius: 20px;
+        }
+    }
+
+    .content {
+        h2 {
+            color: rgba(255, 117, 98, 255);
+        }
     }
 }
 </style>

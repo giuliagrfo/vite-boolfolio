@@ -107,13 +107,13 @@ export default {
                             <span class="visually-hidden">(current)</span></router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link text-uppercase" :to="{ name: 'about' }">About Me</router-link>
+                        <router-link class="nav-link text-uppercase" :to="{ name: 'about' }">About</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link text-uppercase" :to="{ name: 'projects' }">Projects</router-link>
+                        <router-link class="nav-link text-uppercase" :to="{ name: 'projects' }">Progetti</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link text-uppercase" :to="{ name: 'contacts' }">Contacts</router-link>
+                        <router-link class="nav-link text-uppercase" :to="{ name: 'contacts' }">Contatti</router-link>
                     </li>
                 </ul>
 
