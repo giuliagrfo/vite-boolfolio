@@ -14,12 +14,12 @@ export default {
     <section id="about" class="">
         <div id="banner">
             <div class="title text-center">
-                <h1>About Me</h1>
+                <h1>About Me.</h1>
             </div>
             <div class="name text-center">
                 <p>
                     Sono un'appassionata di tecnologia e coding. <br>
-                    Con l'accademia di Boolean ho avuto l'opportunità di mettermi in gioco,
+                    Con la tech academy di Boolean ho avuto l'opportunità di mettermi in gioco,
                     iniziando a programmare non solo applicazioni, ma anche il mio futuro.
                 </p>
             </div>

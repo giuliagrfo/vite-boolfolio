@@ -58,49 +58,55 @@ export default {
 
 <template>
     <NavItem></NavItem>
-    <div class="container mt-5 pt-5">
-        <h1 class="text-uppercase">Contattami</h1>
+    <section id="contacts" class="m-5">
+        <div class="container">
+            <h1 class="text-uppercase">Contacts.</h1>
 
-        <div v-if="success" class="alert alert-success" role="alert">
-            Messaggio inviato con successo!
-        </div>
-        <div class="login-box">
-            <form @submit.prevent="sendForm()">
-                <div class="user-box">
-                    <input required="name" name="name" type="text" v-model="name">
-                    <label>Nome</label>
-                    <p v-for="(error) in errors.name" class="alert alert-danger mt-2">
-                        {{ error }}
-                    </p>
-                </div>
-                <div class="user-box">
-                    <input required="" name="email" type="email" v-model="email">
-                    <label>Email</label>
-                    <p v-for="(error) in errors.email" class="alert alert-danger mt-2">
-                        {{ error }}
-                    </p>
-                </div>
-                <div class="user-box">
-                    <textarea name="message" id="message" v-model="message" cols="30" rows="10"
-                        placeholder="Messaggio"></textarea>
-                    <p v-for="(error) in errors.message" class="alert alert-danger mt-2">
-                        {{ error }}
-                    </p>
-                </div>
-                <button class="btn" type="submit" :disabled="loading">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    {{ loading ? 'Sending..' : 'Invia' }}
-                </button>
-            </form>
+            <div v-if="success" class="alert alert-success" role="alert">
+                Messaggio inviato con successo!
+            </div>
+            <div class="login-box">
+                <form @submit.prevent="sendForm()">
+                    <div class="user-box">
+                        <input required="name" name="name" type="text" v-model="name">
+                        <label>Nome</label>
+                        <p v-for="(error) in errors.name" class="alert alert-danger mt-2">
+                            {{ error }}
+                        </p>
+                    </div>
+                    <div class="user-box">
+                        <input required="" name="email" type="email" v-model="email">
+                        <label>Email</label>
+                        <p v-for="(error) in errors.email" class="alert alert-danger mt-2">
+                            {{ error }}
+                        </p>
+                    </div>
+                    <div class="user-box">
+                        <textarea name="message" id="message" v-model="message" cols="30" rows="10"
+                            placeholder="Messaggio"></textarea>
+                        <p v-for="(error) in errors.message" class="alert alert-danger mt-2">
+                            {{ error }}
+                        </p>
+                    </div>
+                    <button class="btn" type="submit" :disabled="loading">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        {{ loading ? 'Sending..' : 'Invia' }}
+                    </button>
+                </form>
 
+            </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <style lang="scss" scoped>
+#contacts {
+    padding-top: 5rem;
+}
+
 .login-box {
     width: 900px;
     height: fit-content;

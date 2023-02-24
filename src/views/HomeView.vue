@@ -41,8 +41,8 @@ export default {
                 <div class="pages d-flex justify-content-center align-items-center">
                     <ul class="list-unstyled text-center">
                         <li><a class="link about" href="/about">About</a></li>
-                        <li><a class="link projects" href="/projects">Progetti</a></li>
-                        <li><a class="link contacts" href="/contacts">Contatti</a></li>
+                        <li><a class="link projects" href="/projects">Projects</a></li>
+                        <li><a class="link contacts" href="/contacts">Contacts</a></li>
                         <li><a class="link git" href="https://github.com/giuliagrfo">GitHub</a></li>
                     </ul>
                 </div>

@@ -62,22 +62,22 @@ export default {
                         <h2>{{ project.description }}</h2>
                     </div>
                     <!--<div class="type">
-                                                                                            <strong>Tipologia: </strong>
-                                                                                            <span v-if="project.type">
-                                                                                                {{ project.type.name }}
-                                                                                            </span>
-                                                                                            <span v-else>No type assigned</span>
-                                                                                        </div>
-
-                                                                                        <div class="technologies">
-                                                                                            <strong>Tecnologie: </strong>
-                                                                                            <template v-if="project.technologies.length > 0">
-                                                                                                <span v-for="technology in project.technologies">
-                                                                                                    #{{ technology.name }}
+                                                                                                <strong>Tipologia: </strong>
+                                                                                                <span v-if="project.type">
+                                                                                                    {{ project.type.name }}
                                                                                                 </span>
-                                                                                            </template>
-                                                                                            <template v-else>No technologies assigned</template>
-                                                                                        </div> -->
+                                                                                                <span v-else>No type assigned</span>
+                                                                                            </div>
+
+                                                                                            <div class="technologies">
+                                                                                                <strong>Tecnologie: </strong>
+                                                                                                <template v-if="project.technologies.length > 0">
+                                                                                                    <span v-for="technology in project.technologies">
+                                                                                                        #{{ technology.name }}
+                                                                                                    </span>
+                                                                                                </template>
+                                                                                                <template v-else>No technologies assigned</template>
+                                                                                            </div> -->
 
                 </div>
             </div>
@@ -93,10 +93,6 @@ export default {
 .single-project {
     margin-top: 6rem;
     padding-bottom: 4rem;
-
-    .row {
-        padding: 4rem 0;
-    }
 
     .project_image {
         height: 500px;
