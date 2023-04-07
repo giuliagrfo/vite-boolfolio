@@ -17,6 +17,7 @@ export default {
                 <h1>About Me.</h1>
             </div>
             <div class="name text-center">
+                <!-- <img src="../../public/img/Giulia Piccola.jpeg" alt=""> -->
                 <p>
                     Sono un'appassionata di tecnologia e coding. <br>
                     Con la tech academy di Boolean ho avuto l'opportunità di mettermi in gioco,
@@ -120,6 +121,12 @@ h1 {
     .name {
         display: flex;
         justify-content: center;
+
+        img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
     }
 
     .name p {
@@ -228,10 +235,6 @@ h1 {
         }
     }
 }
-
-// .bio {
-//     background-color: ;
-// }
 
 // SKILLS
 #skills,
